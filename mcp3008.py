@@ -3,5 +3,5 @@
 def readadc(adcnum):
 	#check if adcnum is in range
 	#get adcout
-	# return adcout
+	#return adcout
 
