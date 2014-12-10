@@ -40,7 +40,7 @@ while True:
 
         # Print out results
         print"---"
-        if !DEBUG:
+        if DEBUG == 0:
                 print("Light: {}".format(light_level))
         else:
                 print("Light: {} ({}V)".format(light_level,light_volts))
