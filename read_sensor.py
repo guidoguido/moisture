@@ -26,24 +26,23 @@ def ConvertVolts(data,places):
         volts = round(volts,places)
         return volts
 
-light_channel = 0
-#temp_channel  = 1
+sensor_channel = 0
 
 # Define delay between readings
 delay = 2
 
 while True:
 
-        # Read the light sensor data
-        light_level = ReadChannel(light_channel)
-        light_volts = ConvertVolts(light_level,2)
+        # Read the sensor data
+        sensor_level = ReadChannel(sensor_channel)
+        sensor_volts = ConvertVolts(sensor_level,2)
 
         # Print out results
         print"---"
         if DEBUG == 0:
-                print("Light: {}".format(light_level))
+                print("data: {}".format(sensor_level))
         else:
-                print("Light: {} ({}V)".format(light_level,light_volts))
+                print("Light: {} ({}V)".format(sensor_level,sensor_volts))
 
         # Wait before repeating loop
         time.sleep(delay)
