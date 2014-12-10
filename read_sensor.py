@@ -39,8 +39,11 @@ while True:
         light_volts = ConvertVolts(light_level,2)
 
         # Print out results
-        print "--------------------------------------------"
-        print("Light: {} ({}V)".format(light_level,light_volts))
+        print"---"
+        if !DEBUG:
+                print("Light: {}".format(light_level))
+        else:
+                print("Light: {} ({}V)".format(light_level,light_volts))
 
         # Wait before repeating loop
         time.sleep(delay)
