@@ -40,9 +40,9 @@ while True:
         # Print out results
         print"---"
         if DEBUG == 0:
-                print("data: {}".format(sensor_level))
+                print("Data: {}".format(sensor_level))
         else:
-                print("Light: {} ({}V)".format(sensor_level,sensor_volts))
+                print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 
         # Wait before repeating loop
         time.sleep(delay)
