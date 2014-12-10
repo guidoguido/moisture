@@ -29,7 +29,7 @@ def ConvertVolts(data,places):
 sensor_channel = 0
 
 # Define delay between readings
-delay = 2
+delay = 0.5
 
 while True:
 
