@@ -3,7 +3,6 @@ import time
 import os
 import spidev
 #import RPi.GPIO as GPIO
-
 #GPIO.setmode(GPIO.BCM)
 DEBUG = 1
 
@@ -29,7 +28,7 @@ def ConvertVolts(data,places):
 sensor_channel = 0
 
 # Define delay between readings
-delay = 0.5
+delay = 1
 
 while True:
 
