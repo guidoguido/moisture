@@ -3,9 +3,9 @@ import RPi.GPIO as GPIO
 import time
 import os
 
-class RGB(object):
-	GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 
+class RGB(object):
 	def __init__(self,red,green,blue,debug):
 		self.red = red
 		self.green = green
@@ -18,14 +18,14 @@ class RGB(object):
 	
 	def blink(self, color, blink_time, pause_time):
 		if color == "Blue":
-		GPIO.output(red, False)
-		GPIO.output(green, False)
-		GPIO.output(blue, True)
-		
-		# sleep
-		time.sleep(pause_time)
+			GPIO.output(red, False)
+			GPIO.output(green, False)
+			GPIO.output(blue, True)
+			
+			# sleep
+			time.sleep(pause_time)
 
-		GPIO.output(red, False)
-		GPIO.output(green, False)
-		GPIO.output(blue, False)
+			GPIO.output(red, False)
+			GPIO.output(green, False)
+			GPIO.output(blue, False)
 		return None
