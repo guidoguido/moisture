@@ -13,12 +13,12 @@ class Sensor(object):
 		self.debug = debug
 		
 
-	def ReadChannel(self,channel):
+	def ReadChannel(self):
 		adc = spi.xfer2([1,(8+self.channel)<<4,0])
 		data = ((adc[1]&3) << 8) + adc[2]
 		return data
 
-	def ConvertVolts(self,data,places):
-		volts = (data * 3.3) / float(1023)
-		volts = round(volts,places)
-		return volts
+	#def ConvertVolts(self,data,places):
+	#	volts = (data * 3.3) / float(1023)
+	#	volts = round(volts,places)
+	#	return volts
