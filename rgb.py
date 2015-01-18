@@ -31,4 +31,3 @@ class RGB(object):
 
 					## sleep
 					time.sleep(pause_time)
-
