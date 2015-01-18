@@ -11,8 +11,8 @@ sensor = Sensor(0, debug)
 while True:
 
         # Read the sensor data
-        sensor_level = ReadChannel(sensor_channel)
-        sensor_volts = ConvertVolts(sensor_level,2)
+        sensor_level = sensor.ReadChannel(sensor_channel)
+        sensor_volts = sensor.ConvertVolts(sensor_level,2)
 
         # Print out results
         print"---"
