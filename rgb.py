@@ -12,20 +12,20 @@ class RGB(object):
 		self.blue = blue
 		self.debug = debug
 
-		GPIO.setup(red, GPIO.OUT)
-		GPIO.setup(green, GPIO.OUT)
-		GPIO.setup(blue, GPIO.OUT)
+		GPIO.setup(self.red, GPIO.OUT)
+		GPIO.setup(self.green, GPIO.OUT)
+		GPIO.setup(self.blue, GPIO.OUT)
 	
 	def blink(self, color, blink_time, pause_time):
 		if color == "Blue":
-			GPIO.output(red, False)
-			GPIO.output(green, False)
-			GPIO.output(blue, True)
+			GPIO.output(self.red, False)
+			GPIO.output(self.green, False)
+			GPIO.output(self.blue, True)
 			
 			# sleep
 			time.sleep(pause_time)
 
-			GPIO.output(red, False)
-			GPIO.output(green, False)
-			GPIO.output(blue, False)
+			GPIO.output(self.red, False)
+			GPIO.output(self.green, False)
+			GPIO.output(self.blue, False)
 		return None
