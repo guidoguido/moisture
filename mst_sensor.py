@@ -17,7 +17,7 @@ class Sensor(object):
 		data = ((adc[1]&3) << 8) + adc[2]
 		return data
 
-	def ConvertVolts(data,places):
+	def ConvertVolts(self,data,places):
 		volts = (data * 3.3) / float(1023)
 		volts = round(volts,places)
 		return volts
