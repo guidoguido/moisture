@@ -1,8 +1,10 @@
 #class version of read_sensor.py
+import time
+import os
+import spidev
+
 class Sensor(object):
-	import time
-	import os
-	import spidev
+
 
 	def __init__(self, channel, debug):
 		self.channel = channel
