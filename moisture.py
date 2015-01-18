@@ -13,11 +13,11 @@ while True:
 
         # Read the sensor data
         sensor_level = sensor.ReadChannel()
-        #sensor_volts = sensor.ConvertVolts(sensor_level,2)
+        sensor_volts = sensor.ConvertVolts(sensor_level,2)
 
         # Print out results
         print"---"
-        if debug:
+        if not debug:
                 print("Data: {}".format(sensor_level))
         else:
                 print("Data: {} ({}V)".format(sensor_level,sensor_volts))
