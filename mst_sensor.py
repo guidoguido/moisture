@@ -5,8 +5,8 @@ import spidev
 
 class Sensor(object):
 	# Open SPI bus
-		spi = spidev.SpiDev()
-		spi.open(0,0)
+	spi = spidev.SpiDev()
+	spi.open(0,0)
 
 	def __init__(self,channel,debug):
 		self.channel = channel
