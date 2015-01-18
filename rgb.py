@@ -28,6 +28,3 @@ class RGB(object):
 					GPIO.output(red, False)
 					GPIO.output(green, False)
 					GPIO.output(blue, False)
-
-					# sleep
-					time.sleep(pause_time)
