@@ -9,6 +9,11 @@ delay = 1
 rgb = RGB(23,24,25,debug)
 sensor = Sensor(0, debug)
 
+if debug:
+	rgb.blink(blue,0.1,1)
+else:
+	rgb.blink(green,0.1,1)
+
 while True:
 
         # Read the sensor data
