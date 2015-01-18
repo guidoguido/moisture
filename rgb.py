@@ -3,9 +3,9 @@ import RPi.GPIO as GPIO
 import time
 import os
 
-GPIO.setmode(GPIO.BCM)
-
 class RGB(object):
+	GPIO.setmode(GPIO.BCM)
+
 	def __init__(self,red,green,blue,debug):
 		self.red = red
 		self.green = green
