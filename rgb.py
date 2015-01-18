@@ -15,16 +15,15 @@ class RGB(object):
 		GPIO.setup(blue, GPIO.OUT)
 	
 	def blink(self, color, blink_time, pause_time):
-		try:
-			while True:
-				if color == "Blue":
-					GPIO.output(red, False)
-					GPIO.output(green, False)
-					GPIO.output(blue, True)
-					
-					# sleep
-					time.sleep(pause_time)
+		if color == "Blue":
+		GPIO.output(red, False)
+		GPIO.output(green, False)
+		GPIO.output(blue, True)
+		
+		# sleep
+		time.sleep(pause_time)
 
-					GPIO.output(red, False)
-					GPIO.output(green, False)
-					GPIO.output(blue, False)
+		GPIO.output(red, False)
+		GPIO.output(green, False)
+		GPIO.output(blue, False)
+		return None
