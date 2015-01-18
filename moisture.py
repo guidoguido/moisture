@@ -1,7 +1,7 @@
 # main
 import time
-import Sensor from mst_sensor.py
-import RGB from rgb.py
+from mst_sensor.py import Sensor
+from rgb.py import RGB 
 
 debug = True
 
