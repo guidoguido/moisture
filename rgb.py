@@ -25,10 +25,10 @@ class RGB(threading.Thread):
 			pass
 			GPIO.output(self.blue, True)
 			print "On"
-			time.sleep(blink_time)
+			time.sleep(self.blink_time)
 			GPIO.output(self.blue, False)
 			print "Off"
-			time.sleep(pause_time)
+			time.sleep(self.pause_time)
 		return None
 
 	'''def blink(self, color, blink_time, pause_time):
