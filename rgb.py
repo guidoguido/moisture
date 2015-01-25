@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 import os
-#import threading
+import threading
 
 GPIO.setmode(GPIO.BCM)
 
