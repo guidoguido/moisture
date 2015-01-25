@@ -17,15 +17,26 @@ class RGB(object):
 		GPIO.setup(self.blue, GPIO.OUT)
 	
 	def blink(self, color, blink_time, pause_time):
-		if color == "Blue":
-			GPIO.output(self.red, False)
-			GPIO.output(self.green, False)
-			GPIO.output(self.blue, True)
+		while True:
+			PIO.output(self.blue, True)
+			print "On"
+			time.sleep(blink_time)
+			GPIO.output(self.blue, False)
+			time.sleep(pause_time)
+			print "Off"
+		'''if color == "Blue":
+			while True:
+				PIO.output(self.blue, True)
+				time.sleep(blink_time)
+				GPIO.output(self.blue, False)
+				time.sleep(pause_time)
+
+		elif color == "Green":
+			GPIO.output(self.green, True)
 			
-			# sleep
+		# delay still freezes complete system for total pause time
 			time.sleep(pause_time)
 
-			GPIO.output(self.red, False)
 			GPIO.output(self.green, False)
-			GPIO.output(self.blue, False)
+		'''
 		return None

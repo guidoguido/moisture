@@ -1,4 +1,5 @@
 # main
+from threading import Thread
 import time
 from mst_sensor import Sensor
 from rgb import RGB 
@@ -9,10 +10,13 @@ delay = 1
 rgb = RGB(23,24,25,debug)
 sensor = Sensor(0, debug)
 
-if debug:
-	rgb.blink("Blue",0.1,10)
-else:
-	rgb.blink("Green",0.1,1)
+status = Thread.(target=rgb.blink, args=("Blue",0.1,1))
+print "Started blinking"
+
+#if debug:
+#	rgb.blink("Blue",0.1,10)
+#else:
+#	rgb.blink("Green",0.1,1)
 
 while True:
 
@@ -23,9 +27,9 @@ while True:
         # Print out results
         print"---"
         if not debug:
-                print("Data: {}".format(sensor_level))
+               # print("Data: {}".format(sensor_level))
         else:
-                print("Data: {} ({}V)".format(sensor_level,sensor_volts))
+               # print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 
         # Wait before repeating loop
         time.sleep(delay)
