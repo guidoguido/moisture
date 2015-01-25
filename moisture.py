@@ -26,9 +26,9 @@ while True:
 
         # Print out results
         print"---"
-        if not debug:
+        #if not debug:
                # print("Data: {}".format(sensor_level))
-        else:
+        #else:
                # print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 
         # Wait before repeating loop
