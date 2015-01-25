@@ -29,7 +29,7 @@ class RGB(threading.Thread):
 			GPIO.output(self.blue, False)
 			print "Off"
 			time.sleep(pause_time)
-
+		return None
 
 	'''def blink(self, color, blink_time, pause_time):
 		while True:
@@ -54,4 +54,4 @@ class RGB(threading.Thread):
 
 			GPIO.output(self.green, False)
 		'''
-		return None
+		
