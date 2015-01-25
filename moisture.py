@@ -10,7 +10,7 @@ delay = 1
 rgb = RGB(23,24,25,debug)
 sensor = Sensor(0, debug)
 
-status = Thread.(target=rgb.blink, args=("Blue",0.1,1))
+status = Thread(target=rgb.blink, args=("Blue",0.1,1))
 print "Started blinking"
 
 #if debug:
