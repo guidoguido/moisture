@@ -10,6 +10,7 @@ delay = 1
 sensor = Sensor(0, debug)
 
 blink = RGB(23,24,25,debug,0.1,1)
+print threading.main_thread()
 blink.start()
 print "Started blinking"
 
