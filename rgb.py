@@ -34,8 +34,8 @@ class RGB(object):
 		GPIO.output(self.blue, False)
 		self.state = False
 
-	def getState():
+	def getState(self):
 		return self.state
 
-	def setState(state):
+	def setState(self, state):
 		self.state = state
