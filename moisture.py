@@ -7,7 +7,7 @@ from rgb import RGB
 
 current_milli_time = lambda: int(round(time.time() * 1000))
 debug = True
-error = True
+error = False
 
 sensor = Sensor(0, debug)
 led = RGB(23,24,25)
@@ -28,37 +28,37 @@ def status_indicator():
 
 			if current_milli_time() - prev_milli_time > interval:	#Timer 
 				prev_milli_time = int(current_milli_time())					#prev time is updated
-				print "--"
 				if led_on:
-					interval = 2000
+					interval = 4000	#interval between blinks
 					led.off()
 					led_on = False
 				else:
-					interval = 100
+					interval = 100	#blink durration
 					led.on(color)
 					led_on = True
 	except (KeyboardInterrupt, SystemExit):
  		GPIO.cleanup()
 
-# def measure(): #function to let all the sensors(1) measure 
-# 	interval = 1        
-# 	try:
-# 		while True:
+def measure(): #function to let all the sensors(1) measure 
+  prev_milli_time = int(round(time.time()*1000))
+  interval = 3
 
-# 			# Read the sensor data
-# 			sensor_level = sensor.ReadChannel()
-# 			sensor_volts = sensor.ConvertVolts(sensor_level,2)
+	try:
+		while True:
+			# Read the sensor data
+			if current_milli_time() - prev_milli_time > interval:	#Timer 
+				prev_milli_time = int(current_milli_time())
+				sensor_level = sensor.ReadChannel()
+				sensor_volts = sensor.ConvertVolts(sensor_level,2)
 
-# 			# Print out results
-# 			print"---"
-# 			if not debug:
-# 				print("Data: {}".format(sensor_level))
-# 			else:
-# 				print("Data: {} ({}V)".format(sensor_level,sensor_volts))
+				# Print out results
+				print"---"
+				if not debug:
+					print("Data: {}".format(sensor_level))
+				else:
+					print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 
-# 			# Wait before repeating loop
-# 			# time.sleep(interval)
-# 	except (KeyboardInterrupt, SystemExit):
-# 		GPIO.cleanup()
+	except (KeyboardInterrupt, SystemExit):
+		GPIO.cleanup()
 
 status_indicator()
