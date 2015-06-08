@@ -22,7 +22,7 @@ class RGB(threading.Thread):
 	
 	def run(self):
 		while True:
-			print RGB.main_thread()
+			print RGB
 			pass
 			GPIO.output(self.blue, True)
 			print "On"

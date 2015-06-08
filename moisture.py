@@ -18,20 +18,23 @@ print "Started blinking"
 #	rgb.blink("Blue",0.1,10)
 #else:
 #	rgb.blink("Green",0.1,1)
+try:
+        while True:
 
-while True:
+                # Read the sensor data
+                sensor_level = sensor.ReadChannel()
+                sensor_volts = sensor.ConvertVolts(sensor_level,2)
 
-        # Read the sensor data
-        sensor_level = sensor.ReadChannel()
-        sensor_volts = sensor.ConvertVolts(sensor_level,2)
+                # Print out results
+                print"---"
+                if not debug:
+                        print("Data: {}".format(sensor_level))
+                else:
+                        print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 
-        # Print out results
-        print"---"
-        if not debug:
-                print("Data: {}".format(sensor_level))
-        else:
-                print("Data: {} ({}V)".format(sensor_level,sensor_volts))
-
-        # Wait before repeating loop
-        time.sleep(delay)
-        
+                # Wait before repeating loop
+                time.sleep(delay)
+except (KeyboardInterrupt, SystemExit):
+#    b.stop()
+ #   b.join()
+    GPIO.cleanup()
