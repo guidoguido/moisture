@@ -37,8 +37,8 @@ def measure(): #function to let all the sensors(1) measure
 	if not debug:
 		print("Data: {}".format(sensor_level))
 	else:
+		print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 	
-	print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 	print ("{},{},{}".format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),sensor_level,sensor_volts))
 	#write_line(line)
 
