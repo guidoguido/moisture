@@ -26,13 +26,13 @@ class RGB(object):
 			GPIO.output(self.green, True)
 		elif color == "Blue":
 			GPIO.output(self.blue, True)
-		setState(True)
+		self.state = True
 
 	def off(self):
 		GPIO.output(self.red, False)
 		GPIO.output(self.green, False)
 		GPIO.output(self.blue, False)
-		setState(False)
+		self.state = False
 
 	def getState():
 		return(self.state)
