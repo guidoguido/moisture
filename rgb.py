@@ -15,11 +15,17 @@ class RGB(object):
 		GPIO.setup(self.green, GPIO.OUT)
 		GPIO.setup(self.blue, GPIO.OUT)
 	
-	def blink(self, color):
-		if color == "Blue":
-			GPIO.output(self.blue, True)
-		elif color == "Red":
+	def on(self, color):
+		if color == "Red":
 			GPIO.output(self.red, True)
 		elif color == "Green":
 			GPIO.output(self.green, True)
-		return None
+		elif color == "Blue":
+			GPIO.output(self.blue, True)
+		return 
+
+	def off(self):
+		GPIO.output(self.red, False)
+		GPIO.output(self.green, False)
+		GPIO.output(self.blue, False)
+		return

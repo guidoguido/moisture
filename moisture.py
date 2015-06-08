@@ -9,15 +9,11 @@ debug = True
 error = False
 
 sensor = Sensor(0, debug)
-
 led = RGB(23,24,25)
-# print threading
 
-status_indicator()
-
-def status_indicator(): #fucntion to show in which mode is running or if there is a problem
+#fucntion to show in which mode is running or if there is a problem
+def status_indicator():
 	prev_time_millitime = int(round(time.time()*1000))
-	# blink_time = 1
 	interval = 1000
 	led_on = False
 	try:
@@ -37,25 +33,26 @@ def status_indicator(): #fucntion to show in which mode is running or if there i
 					led.on(color)
 		return
 
-def measure(): #function to let all the sensors(1) measure 
-	interval = 1        
-	try:
-		while True:
+# def measure(): #function to let all the sensors(1) measure 
+# 	interval = 1        
+# 	try:
+# 		while True:
 
-			# Read the sensor data
-			sensor_level = sensor.ReadChannel()
-			sensor_volts = sensor.ConvertVolts(sensor_level,2)
+# 			# Read the sensor data
+# 			sensor_level = sensor.ReadChannel()
+# 			sensor_volts = sensor.ConvertVolts(sensor_level,2)
 
-			# Print out results
-			print"---"
-			if not debug:
-				print("Data: {}".format(sensor_level))
-			else:
-				print("Data: {} ({}V)".format(sensor_level,sensor_volts))
+# 			# Print out results
+# 			print"---"
+# 			if not debug:
+# 				print("Data: {}".format(sensor_level))
+# 			else:
+# 				print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 
-			# Wait before repeating loop
-			# time.sleep(interval)
-	except (KeyboardInterrupt, SystemExit):
-		GPIO.cleanup()
+# 			# Wait before repeating loop
+# 			# time.sleep(interval)
+# 	except (KeyboardInterrupt, SystemExit):
+# 		GPIO.cleanup()
 
+status_indicator()
   
