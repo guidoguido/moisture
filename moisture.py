@@ -12,8 +12,6 @@ error = False
 sensor = Sensor(0, debug)
 led = RGB(23,24,25)
 
-timer()
-
 def blink_status(): #fucntion to show in which mode is running or if there is a problem
 	led_on = False
 	if error:
@@ -74,3 +72,5 @@ def timer(): #function to time multiple events
 		pass
 	finally:
 		GPIO.cleanup()
+
+timer()
