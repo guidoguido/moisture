@@ -57,7 +57,6 @@ def measure(): #function to let all the sensors(1) measure
 					print("Data: {}".format(sensor_level))
 				else:
 					print("Data: {} ({}V)".format(sensor_level,sensor_volts))
-
 	except (KeyboardInterrupt, SystemExit):
 		GPIO.cleanup()
 
