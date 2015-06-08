@@ -14,6 +14,9 @@ class RGB(object):
 		GPIO.setup(self.red, GPIO.OUT)
 		GPIO.setup(self.green, GPIO.OUT)
 		GPIO.setup(self.blue, GPIO.OUT)
+		GPIO.output(self.red, False)
+		GPIO.output(self.green, False)
+		GPIO.output(self.blue, False)
 	
 	def on(self, color):
 		if color == "Red":
@@ -27,4 +30,3 @@ class RGB(object):
 		GPIO.output(self.red, False)
 		GPIO.output(self.green, False)
 		GPIO.output(self.blue, False)
-		
