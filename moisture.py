@@ -50,7 +50,7 @@ def main(): #function to time multiple events
 	prev_milli_time_1 = int(round(time.time()*1000))
 	prev_milli_time_2 = int(round(time.time()*1000))
 	blink_interval = 100
-	measure_interval = 500
+	measure_interval = 0
 	try:
 		while True:
 			if current_milli_time() - prev_milli_time_1 > blink_interval:	#Timer 
@@ -65,6 +65,7 @@ def main(): #function to time multiple events
 			if current_milli_time() - prev_milli_time_2 > measure_interval:	#Timer 
 				prev_milli_time_2 = int(current_milli_time())
 				measure()
+				measure_interval = 300000
 
 	except Exception, e:
 		raise
