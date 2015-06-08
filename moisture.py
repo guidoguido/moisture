@@ -40,9 +40,9 @@ def status_indicator():
  		GPIO.cleanup()
 
 def measure(): #function to let all the sensors(1) measure 
-  prev_milli_time = int(round(time.time()*1000))
-  interval = 3
-try:
+	prev_milli_time = int(round(time.time()*1000))
+	interval = 3
+	try:
 		while True:
 			if current_milli_time() - prev_milli_time > interval:	#Timer 
 				prev_milli_time = int(current_milli_time())
