@@ -6,8 +6,8 @@ from mst_sensor import Sensor
 from rgb import RGB 
 
 current_milli_time = lambda: int(round(time.time() * 1000))
-debug = False
-error = False
+debug = True
+error = True
 
 sensor = Sensor(0, debug)
 led = RGB(23,24,25)
@@ -15,7 +15,7 @@ led = RGB(23,24,25)
 #fucntion to show in which mode is running or if there is a problem
 def status_indicator():
 	prev_milli_time = int(round(time.time()*1000))
-	interval = 1000
+	interval = 0
 	led_on = False
 	try:
 		while True:
@@ -26,19 +26,17 @@ def status_indicator():
 			else:
 				color = "Green"
 
-			if current_milli_time() - prev_milli_time > interval:
-				prev_milli_time = int(current_milli_time())
-				print prev_milli_time
-				print current_milli_time()
+			if current_milli_time() - prev_milli_time > interval:	#Timer 
+				prev_milli_time = int(current_milli_time())					#prev time is updated
 				print "--"
 				if led_on:
-					print "if"
+					interval = 2000
 					led.off()
-					led_on = False;
+					led_on = False
 				else:
-					print "else"
+					interval = 100
 					led.on(color)
-					led_on = True;
+					led_on = True
 	except (KeyboardInterrupt, SystemExit):
  		GPIO.cleanup()
 
