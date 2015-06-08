@@ -20,7 +20,6 @@ def blink_status(): #fucntion to show in which mode is running or if there is a 
 		color = "Blue"
 	else:
 		color = "Green"
-	print (if led.getState)
 
 	if led.getState:
 		print "hoppa"
