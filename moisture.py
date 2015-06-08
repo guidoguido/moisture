@@ -13,7 +13,7 @@ sensor = Sensor(0, debug)
 led = RGB(23,24,25)
 
 def blink_status(): #fucntion to show in which mode is running or if there is a problem
-	led_on = False
+	
 	if error:
 		color = "Red"
 	elif debug:
@@ -21,14 +21,12 @@ def blink_status(): #fucntion to show in which mode is running or if there is a 
 	else:
 		color = "Green"
 
-	if led_on:
+	if led.getState:
 		# interval = 4000	#interval between blinks
 		led.off()
-		led_on = False
 	else:
 		# interval = 100	#blink durration
 		led.on(color)
-		led_on = True
 
 def measure(): #function to let all the sensors(1) measure 
 	# Read the sensor data
