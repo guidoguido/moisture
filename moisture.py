@@ -37,7 +37,7 @@ def measure(): #function to let all the sensors(1) measure
 		print("Data: {}".format(sensor_level))
 	else:
 		print("Data: {} ({}V)".format(sensor_level,sensor_volts))
-	print datetime.datetime.strftime("%Y-%m-%d %H:%M")
+	print datetime.datetime.today.strftime("%Y-%m-%d %H:%M")
 	#write_line(line)
 
 # def write_line(line):
