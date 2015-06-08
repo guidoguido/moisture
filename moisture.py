@@ -37,7 +37,9 @@ def measure(): #function to let all the sensors(1) measure
 		print("Data: {}".format(sensor_level))
 	else:
 		print("Data: {} ({}V)".format(sensor_level,sensor_volts))
-	print datetime.datetime.today.strftime("%Y-%m-%d %H:%M")
+	#print datetime.datetime.now().isoformat()
+	print datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+	#%Y-%m-%d %H:%M:%S
 	#write_line(line)
 
 # def write_line(line):
@@ -49,7 +51,7 @@ def main(): #function to time multiple events
 	prev_milli_time_1 = int(round(time.time()*1000))
 	prev_milli_time_2 = int(round(time.time()*1000))
 	blink_interval = 100
-	measure_interval = 5000
+	measure_interval = 500
 	try:
 		while True:
 			if current_milli_time() - prev_milli_time_1 > blink_interval:	#Timer 
