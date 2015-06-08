@@ -28,8 +28,9 @@ def status_indicator():
 
 			if current_milli_time() - prev_milli_time > interval:
 				prev_milli_time = int(current_milli_time())
-				print "prev:" + prev_milli_time
-				print "cur:" + current_milli_time
+				print prev_milli_time
+				print current_milli_time
+				print "--"
 				if led_on:
 					led.off()
 				else:
