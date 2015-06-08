@@ -1,40 +1,61 @@
 # main
-import threading
+# import threading
 import time
 from mst_sensor import Sensor
 from rgb import RGB 
 
+current_milli_time = lambda: int(round(time.time() * 1000))
 debug = True
-delay = 1
+error = False
 
 sensor = Sensor(0, debug)
 
-blink = RGB(23,24,25,debug,0.1,1)
+led = RGB(23,24,25)
 # print threading
-blink.start()
-print "Started blinking"
 
-#if debug:
-#	rgb.blink("Blue",0.1,10)
-#else:
-#	rgb.blink("Green",0.1,1)
-try:
-        while True:
+status_indicator()
 
-                # Read the sensor data
-                sensor_level = sensor.ReadChannel()
-                sensor_volts = sensor.ConvertVolts(sensor_level,2)
+def status_indicator(): #fucntion to show in which mode is running or if there is a problem
+	prev_time_millitime = int(round(time.time()*1000))
+	# blink_time = 1
+	interval = 1000
+	led_on = False
+	try:
+		while True:
+			if error:
+				color = "Red"
+			elif debug:
+				color = "Blue"
+			else:
+				color = "Green"
 
-                # Print out results
-                print"---"
-                if not debug:
-                        print("Data: {}".format(sensor_level))
-                else:
-                        print("Data: {} ({}V)".format(sensor_level,sensor_volts))
+			if current_milli_time - prev_time_millitime > interval:
+				prev_time_millitime = current_milli_time
+				if led_on:
+					led.off()
+				else:
+					led.on(color)
+		return
 
-                # Wait before repeating loop
-                time.sleep(delay)
-except (KeyboardInterrupt, SystemExit):
-#    b.stop()
- #   b.join()
-    GPIO.cleanup()
+def measure(): #function to let all the sensors(1) measure 
+	interval = 1        
+	try:
+		while True:
+
+			# Read the sensor data
+			sensor_level = sensor.ReadChannel()
+			sensor_volts = sensor.ConvertVolts(sensor_level,2)
+
+			# Print out results
+			print"---"
+			if not debug:
+				print("Data: {}".format(sensor_level))
+			else:
+				print("Data: {} ({}V)".format(sensor_level,sensor_volts))
+
+			# Wait before repeating loop
+			# time.sleep(interval)
+	except (KeyboardInterrupt, SystemExit):
+		GPIO.cleanup()
+
+  
