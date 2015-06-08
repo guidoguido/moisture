@@ -1,7 +1,7 @@
 # main
 # import threading
 import RPi.GPIO as GPIO
-import time
+import time, datetime
 from mst_sensor import Sensor
 from rgb import RGB 
 
@@ -37,7 +37,7 @@ def measure(): #function to let all the sensors(1) measure
 		print("Data: {}".format(sensor_level))
 	else:
 		print("Data: {} ({}V)".format(sensor_level,sensor_volts))
-	print time.time()
+	print datetime.datetime.now().isoformat()
 	#write_line(line)
 
 # def write_line(line):
