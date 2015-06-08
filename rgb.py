@@ -10,7 +10,7 @@ class RGB(object):
 		self.red = red
 		self.green = green
 		self.blue = blue
-		self.state = false
+		self.state = False
 
 		GPIO.setup(self.red, GPIO.OUT)
 		GPIO.setup(self.green, GPIO.OUT)
