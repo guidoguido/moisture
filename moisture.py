@@ -1,5 +1,6 @@
 # main
 # import threading
+import RPi.GPIO as GPIO
 import time
 from mst_sensor import Sensor
 from rgb import RGB 
