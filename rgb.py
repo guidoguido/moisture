@@ -35,8 +35,8 @@ class RGB(object):
 		self.state = False
 
 	def getState():
-		print self.state
-		return(self.state)
+		# print self.state
+		return self.state
 
 	def setState(state):
 		self.state = state
