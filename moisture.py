@@ -6,7 +6,7 @@ from mst_sensor import Sensor
 from rgb import RGB 
 
 current_milli_time = lambda: int(round(time.time() * 1000))
-debug = True
+debug = False
 error = False
 
 sensor = Sensor(0, debug)
