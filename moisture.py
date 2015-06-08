@@ -36,6 +36,7 @@ def status_indicator():
 					led.off()
 				else:
 					led.on(color)
+					led_on = false;
 	except (KeyboardInterrupt, SystemExit):
  		GPIO.cleanup()
 
