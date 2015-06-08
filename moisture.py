@@ -20,14 +20,10 @@ def blink_status(): #fucntion to show in which mode is running or if there is a 
 		color = "Blue"
 	else:
 		color = "Green"
-	print led.getState()
 	if led.getState():
-		print "hop"
 		# interval = 4000	#interval between blinks
 		led.off()
 	else:
-		print "hoppa"
-		print color
 		# interval = 100	#blink durration
 		led.on(color)
 
@@ -46,13 +42,18 @@ def measure(): #function to let all the sensors(1) measure
 def timer(): #function to time multiple events
 	prev_milli_time_1 = int(round(time.time()*1000))
 	prev_milli_time_2 = int(round(time.time()*1000))
-	blink_interval = 1000
+	blink_interval = 100
 	measure_interval = 5000
 	try:
 		while True:
 			if current_milli_time() - prev_milli_time_1 > blink_interval:	#Timer 
 				prev_milli_time_1 = int(current_milli_time())
 				blink_status()
+
+				if led.getState() 
+					blink_interval = 100
+				else
+					blink_interval = 2900
 
 			if current_milli_time() - prev_milli_time_2 > measure_interval:	#Timer 
 				prev_milli_time_2 = int(current_milli_time())
