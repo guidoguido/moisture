@@ -31,7 +31,7 @@ def status_indicator():
 					led.off()
 				else:
 					led.on(color)
-	return
+	return None
 
 # def measure(): #function to let all the sensors(1) measure 
 # 	interval = 1        

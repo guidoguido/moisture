@@ -22,10 +22,10 @@ class RGB(object):
 			GPIO.output(self.green, True)
 		elif color == "Blue":
 			GPIO.output(self.blue, True)
-		return 
+		return None
 
 	def off(self):
 		GPIO.output(self.red, False)
 		GPIO.output(self.green, False)
 		GPIO.output(self.blue, False)
-		return
+		return None
