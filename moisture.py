@@ -53,15 +53,6 @@ def timer(): #function to time multiple events
 				prev_milli_time_1 = int(current_milli_time())
 				blink_status()
 
-				if led_on:
-					interval = 4000	#interval between blinks
-					led.off()
-					led_on = False
-				else:
-					interval = 100	#blink durration
-					led.on(color)
-					led_on = True
-
 			if current_milli_time() - prev_milli_time_2 > measure_interval:	#Timer 
 				prev_milli_time_2 = int(current_milli_time())
 				measure()
