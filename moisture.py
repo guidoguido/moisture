@@ -14,7 +14,7 @@ led = RGB(23,24,25)
 
 #fucntion to show in which mode is running or if there is a problem
 def status_indicator():
-	prev_time_millitime = int(round(time.time()*1000))
+	prev_milli_time = int(round(time.time()*1000))
 	interval = 1000
 	led_on = False
 	try:
@@ -26,8 +26,10 @@ def status_indicator():
 			else:
 				color = "Green"
 
-			if current_milli_time() - prev_time_millitime > interval:
-				prev_time_millitime = int(current_milli_time())
+			if current_milli_time() - prev_milli_time > interval:
+				prev_milli_time = int(current_milli_time())
+				print "prev:" + prev_milli_time
+				print "cur:" + current_milli_time
 				if led_on:
 					led.off()
 				else:
