@@ -39,8 +39,7 @@ def measure(): #function to let all the sensors(1) measure
 	else:
 		print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 	
-	print ("{},{},{}".format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),sensor_level,sensor_volts))
-	write_line("{},{},{}".format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),sensor_level,sensor_volts))
+	write_line("{},{},{}\n".format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),sensor_level,sensor_volts))
 
 def write_line(line):
 	with open('log.csv','a') as f:
