@@ -20,8 +20,8 @@ def blink_status(): #fucntion to show in which mode is running or if there is a 
 		color = "Blue"
 	else:
 		color = "Green"
-	
-	if led.getState:
+	print(led.getState())
+	if led.getState():
 		print "hop"
 		# interval = 4000	#interval between blinks
 		led.off()
