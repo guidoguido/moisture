@@ -27,7 +27,7 @@ def status_indicator():
 				color = "Green"
 
 			if current_milli_time() - prev_time_millitime > interval:
-				prev_time_millitime = current_milli_time()
+				prev_time_millitime = int(current_milli_time())
 				if led_on:
 					led.off()
 				else:
