@@ -33,12 +33,12 @@ def status_indicator():
 				print "--"
 				if led_on:
 					print "if"
-					led_on = True;
 					led.off()
+					led_on = False;
 				else:
 					print "else"
 					led.on(color)
-					led_on = False;
+					led_on = True;
 	except (KeyboardInterrupt, SystemExit):
  		GPIO.cleanup()
 
