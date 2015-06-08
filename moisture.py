@@ -32,11 +32,11 @@ def status_indicator():
 				print current_milli_time
 				print "--"
 				if led_on:
-					led_on = true;
+					led_on = True;
 					led.off()
 				else:
 					led.on(color)
-					led_on = false;
+					led_on = False;
 	except (KeyboardInterrupt, SystemExit):
  		GPIO.cleanup()
 
