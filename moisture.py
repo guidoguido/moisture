@@ -55,4 +55,3 @@ def status_indicator():
 # 		GPIO.cleanup()
 
 status_indicator()
-  
