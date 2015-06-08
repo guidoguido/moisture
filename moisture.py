@@ -40,18 +40,18 @@ def measure(): #function to let all the sensors(1) measure
 		print("Data: {} ({}V)".format(sensor_level,sensor_volts))
 	
 	print ("{},{},{}".format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),sensor_level,sensor_volts))
-	#write_line(line)
+	write_line("{},{},{}".format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),sensor_level,sensor_volts))
 
-# def write_line(line):
-# 	with open('log.csv','a') as f:
-# 		f.write(line)
-# 		f.close()
+def write_line(line):
+	with open('log.csv','a') as f:
+		f.write(line)
+		f.close()
 
 def main(): #function to time multiple events
 	prev_milli_time_1 = int(round(time.time()*1000))
 	prev_milli_time_2 = int(round(time.time()*1000))
 	blink_interval = 100
-	measure_interval = 5000
+	measure_interval = 500
 	try:
 		while True:
 			if current_milli_time() - prev_milli_time_1 > blink_interval:	#Timer 
