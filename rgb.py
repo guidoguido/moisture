@@ -27,3 +27,4 @@ class RGB(object):
 		GPIO.output(self.red, False)
 		GPIO.output(self.green, False)
 		GPIO.output(self.blue, False)
+		

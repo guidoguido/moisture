@@ -31,6 +31,8 @@ def status_indicator():
 					led.off()
 				else:
 					led.on(color)
+	except (KeyboardInterrupt, SystemExit):
+ 		GPIO.cleanup()
 
 # def measure(): #function to let all the sensors(1) measure 
 # 	interval = 1        
