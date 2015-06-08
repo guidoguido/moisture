@@ -20,11 +20,10 @@ def blink_status(): #fucntion to show in which mode is running or if there is a 
 		color = "Blue"
 	else:
 		color = "Green"
-	if led.getState():
-		# interval = 4000	#interval between blinks
+
+	if led.getState(): #check the current state of RGB led
 		led.off()
 	else:
-		# interval = 100	#blink durration
 		led.on(color)
 
 def measure(): #function to let all the sensors(1) measure 
@@ -38,8 +37,15 @@ def measure(): #function to let all the sensors(1) measure
 		print("Data: {}".format(sensor_level))
 	else:
 		print("Data: {} ({}V)".format(sensor_level,sensor_volts))
+	print time.now()
+	#write_line(line)
 
-def timer(): #function to time multiple events
+# def write_line(line):
+# 	with open('log.csv','a') as f:
+# 		f.write(line)
+# 		f.close()
+
+def main(): #function to time multiple events
 	prev_milli_time_1 = int(round(time.time()*1000))
 	prev_milli_time_2 = int(round(time.time()*1000))
 	blink_interval = 100
@@ -51,9 +57,9 @@ def timer(): #function to time multiple events
 				blink_status()
 
 				if led.getState():
-					blink_interval = 100
+					blink_interval = 100 #blink durration
 				else:
-					blink_interval = 2900
+					blink_interval = 2900 #interval between blinks
 
 			if current_milli_time() - prev_milli_time_2 > measure_interval:	#Timer 
 				prev_milli_time_2 = int(current_milli_time())
@@ -66,4 +72,4 @@ def timer(): #function to time multiple events
 	finally:
 		GPIO.cleanup()
 
-timer()
+main()
