@@ -14,8 +14,8 @@ error = False
 led = RGB(23,24,25)
 
 sensors = []
-sensors.append(Sensor(01,moist,0,debug))
-sensors.append(Sensor(02,moist,1,debug))
+sensors.append(Sensor(01,"moist",0,debug))
+sensors.append(Sensor(02,"moist",1,debug))
 
 def blink_status(): #function to show in which mode is running or if there is a problem
 	
