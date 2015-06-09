@@ -8,7 +8,9 @@ spi = spidev.SpiDev()
 spi.open(0,0)
 
 class Sensor(object):
-	def __init__(self,channel,debug):
+	def __init__(self,id_,type_,channel,debug):
+		self.id_ = id_
+		self.type_ = type_
 		self.channel = channel
 		self.debug = debug
 		
