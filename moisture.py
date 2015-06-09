@@ -46,7 +46,7 @@ def measure(): #function to let all the sensors(2) measure
 		else:
 			print("{} {} ({}V)".format(sensor.id_,sensor_level,sensor_volts))
 		
-		#write_line("{},{},{},{},{}\n".format(sensor.id_,sensor.type_,datetime.now().strftime('%Y-%m-%d %H:%M:%S'),sensor_level,sensor_volts))
+		write_line("{},{},{},{},{}\n".format(sensor.id_,sensor.type_,datetime.now().strftime('%Y-%m-%d %H:%M:%S'),sensor_level,sensor_volts))
 
 #open log.csv, write meta information and data from sensor, close document
 def write_line(line):
