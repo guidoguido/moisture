@@ -73,7 +73,7 @@ def main(): #function to time multiple events
 			if current_milli_time() - prev_milli_time_2 > measure_interval:	#Timer 
 				prev_milli_time_2 = int(current_milli_time())
 				measure()
-				measure_interval = 2000	
+				measure_interval = 600000	#interval between measurements 10 minutes/600000
 
 	except Exception, e:
 		raise
