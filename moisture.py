@@ -65,7 +65,7 @@ def main(): #function to time multiple events
 				prev_milli_time_1 = int(current_milli_time())
 				blink_status()
 
-				if led.getState():
+				if led.getState():	#getState not need could be led.state !!
 					blink_interval = 100 #blink durration
 				else:
 					blink_interval = 2900 #interval between blinks
