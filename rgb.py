@@ -1,7 +1,7 @@
 #class to controll rgb led 
 import RPi.GPIO as GPIO
 import time #not needed
-import os
+import os #what is this one? 
 
 GPIO.setmode(GPIO.BCM)
 
